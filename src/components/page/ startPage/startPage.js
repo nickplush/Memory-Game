@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react';
 import {Button, makeStyles, TextField} from "@material-ui/core";
 import {Autocomplete} from "@material-ui/lab";
 import {Link} from "react-router-dom";
+import logo from './images/logo.png'
 
 const useStyles = makeStyles({
     root: {
@@ -13,6 +14,7 @@ const useStyles = makeStyles({
         justifyContent: "center"
     },
     button: {
+        borderColor: "black",
         margin: 25
     }
 });
@@ -64,6 +66,7 @@ const StartPage = () => {
     const classes = useStyles()
     return (
         <div className={classes.root}>
+            <img src={logo}/>
             <br/>
             <Autocomplete
                 onChange={(event, newValue) => {

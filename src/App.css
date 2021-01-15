@@ -1,12 +1,8 @@
-/* весь контейнер поддерживает перспективу */
 .flip-container {
   perspective: 1000px;
   margin: 10px;
 }
 
-
-
-/* переверните сторону при проведении мышью */
 flip-container:active .flipper, .flip-container.active .flipper {
   transform: rotateY(180deg);
 }
@@ -16,7 +12,6 @@ flip-container:active .flipper, .flip-container.active .flipper {
   height: 150px;
 }
 
-/* здесь находится скорость перевертывания */
 .flipper {
   transition: 0.6s;
   transform-style: preserve-3d;
@@ -24,7 +19,6 @@ flip-container:active .flipper, .flip-container.active .flipper {
   position: relative;
 }
 
-/* скройте обратную сторону во время переворота */
 .front, .back {
   display: flex;
   justify-content: center;
@@ -35,14 +29,15 @@ flip-container:active .flipper, .flip-container.active .flipper {
   top: 0;
   left: 0;
 }
-
-/* лицевая сторона размещена над обратной */
 .front {
   background-image: url('./components/page/gamePage/images/fon.png');
   z-index: 2;
 }
 
-/* обратная, изначально скрытая сторона */
 .back {
   transform: rotateY(180deg);
+}
+a {
+  color: #000 !important;
+  text-decoration: none
 }

@@ -6,6 +6,10 @@ const useStyles = makeStyles({
         display: "flex",
         justifyContent: "center",
         backgroundImage: './images/fon.png'
+    },
+    img: {
+        height: '120px',
+        width: "auto"
     }
 });
 
@@ -43,7 +47,7 @@ const Card = ({
                     <Paper className="front">
                     </Paper>
                     <Paper className="back">
-                        {item}
+                        <img className={classes.img} src={item}/>
                     </Paper>
                 </div>
             </div>
