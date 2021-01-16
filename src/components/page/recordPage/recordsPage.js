@@ -9,7 +9,7 @@ import {
     TableCell,
     TableContainer,
     TableHead,
-    TableRow
+    TableRow, Typography
 } from "@material-ui/core";
 import {Link} from "react-router-dom";
 
@@ -17,6 +17,7 @@ const useStyles = makeStyles({
     button: {
         background: "black",
         color: "white",
+        margin: 10,
         '&:hover': {
             background: "white",
             color: "black",
@@ -48,6 +49,7 @@ return (
                 reset game
             </Button>
         </Link>
+        <Typography variant={'h3'}>Game Score</Typography>
         <TableContainer component={Paper}>
             <Table size="small" aria-label="a dense table">
                 <TableHead>

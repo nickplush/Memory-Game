@@ -18,10 +18,6 @@ flip-container:active .flipper, .flip-container.active .flipper {
   cursor: pointer;
   position: relative;
 }
-img{
-  width: 80%;
-  height: auto;
-}
 .front, .back {
   display: flex;
   justify-content: center;
