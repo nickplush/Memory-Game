@@ -3,7 +3,6 @@ import {Grid} from "@material-ui/core";
 import Card from "./Card";
 import ModalWindow from "./modalWindow";
 
-
 const PlayingField = ({array}) => {
     const [state, setState] = useState([])
     const [done, setDone] = useState([...array])
@@ -16,7 +15,6 @@ const PlayingField = ({array}) => {
             setTime(new Date().getTime()- time)
             setOpen(true)
         }
-        console.log('LOOOG', time)
     },[done])
     useEffect(()=>startGame(),[])
     useEffect(()=> {

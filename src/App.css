@@ -8,7 +8,7 @@ flip-container:active .flipper, .flip-container.active .flipper {
 }
 
 .flip-container, .front, .back {
-  width: 350px;
+  width: 90%;
   height: 150px;
 }
 
@@ -19,7 +19,6 @@ flip-container:active .flipper, .flip-container.active .flipper {
   position: relative;
 }
 
-
 .front, .back {
   display: flex;
   justify-content: center;
@@ -28,6 +27,8 @@ flip-container:active .flipper, .flip-container.active .flipper {
   position: absolute;
   top: 0;
   left: 0;
+  width: 90%;
+  height: 150px;
 }
 .front {
   background-image: url('./components/page/gamePage/images/fon.png');
@@ -37,6 +38,7 @@ flip-container:active .flipper, .flip-container.active .flipper {
 .back {
   transform: rotateY(180deg);
 }
+
 a {
   text-decoration: none
 }

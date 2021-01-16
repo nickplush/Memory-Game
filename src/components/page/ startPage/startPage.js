@@ -3,6 +3,8 @@ import {Button, makeStyles, TextField} from "@material-ui/core";
 import {Autocomplete} from "@material-ui/lab";
 import {Link} from "react-router-dom";
 import logo from './images/logo.png'
+import {useDispatch, useSelector} from "react-redux";
+import {getGameInfo} from "../../../actions/gameInfoActions";
 
 const useStyles = makeStyles({
     root: {
@@ -25,9 +27,11 @@ const useStyles = makeStyles({
 });
 
 const StartPage = () => {
-    const gameData = JSON.parse(localStorage.getItem('game')) || {players: []}
+    const dispatch = useDispatch()
+    const gameData = useSelector(state => state)
     const [names, setNames] = useState([])
-    const [value, setValue] = useState(gameData.lastPlayer || '');
+    const lastPlayers = gameData.lastPlayer || ''
+    const [value, setValue] = useState('');
 
 
     const getPlayersNames = () => {
@@ -41,7 +45,7 @@ const StartPage = () => {
             names.push(value)
         }
         const newGameData = {...gameData, players: names, lastPlayer: value}
-        localStorage.setItem('game', JSON.stringify(newGameData))
+        dispatch(getGameInfo(newGameData))
     }
 
     const renderButton = () => {
@@ -76,7 +80,7 @@ const StartPage = () => {
             <img src={logo}/>
             <br/>
             <Autocomplete
-                value={value}
+                value={lastPlayers}
                 onChange={(event, newValue) => {
                     setValue(newValue);
                 }}

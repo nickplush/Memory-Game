@@ -7,8 +7,8 @@ const useStyles = makeStyles({
         justifyContent: "center",
     },
     img: {
-        height: '120px',
-        width: "auto"
+        height: 'auto',
+        width: "30%"
     }
 });
 
