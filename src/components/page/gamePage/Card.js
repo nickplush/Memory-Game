@@ -5,7 +5,6 @@ const useStyles = makeStyles({
     container: {
         display: "flex",
         justifyContent: "center",
-        backgroundImage: './images/fon.png'
     },
     img: {
         height: '120px',

@@ -13,7 +13,7 @@ import {Link} from "react-router-dom";
 import {Button} from "@material-ui/core";
 
 const GamePage = () => {
-    const content = [AskAleks,Nirvana,Kish,TFK,Am,TGH,Gd,LP]
+    const content = [AskAleks, Nirvana, Kish, TFK, Am, TGH, Gd, LP]
 
     const dblArr = () => {
         return content.concat(content)
@@ -29,11 +29,13 @@ const GamePage = () => {
     }
     return (
         <div>
-            <Button variant={"contained"}
-                    color={"primary"}
-            >
-                <Link to={'/'}>reset game</Link>
-            </Button>
+            <Link to={'/'}>
+                <Button variant={"contained"}
+                        color={"primary"}
+                >
+                    reset game
+                </Button>
+            </Link>
             <PlayingField array={shuffleArray(dblArr())}/>
         </div>
     )

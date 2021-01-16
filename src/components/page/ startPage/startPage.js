@@ -14,8 +14,13 @@ const useStyles = makeStyles({
         justifyContent: "center"
     },
     button: {
-        borderColor: "black",
-        margin: 25
+        background: "black",
+        color: "white",
+        margin: 25,
+        '&:hover': {
+            background: "white",
+            color: "black",
+        },
     }
 });
 
@@ -51,13 +56,15 @@ const StartPage = () => {
             )
         }
         return (
-            <Button variant={"contained"}
-                    color={"primary"}
-                    className={classes.button}
-                    onClick={savePlayer}
-            >
-                <Link to={'/game'}>start</Link>
-            </Button>
+            <Link to={'/game'}>
+                <Button variant={"contained"}
+                        color={"primary"}
+                        className={classes.button}
+                        onClick={savePlayer}
+                >
+                    start
+                </Button>
+            </Link>
         )
     }
 
@@ -69,6 +76,7 @@ const StartPage = () => {
             <img src={logo}/>
             <br/>
             <Autocomplete
+                value={value}
                 onChange={(event, newValue) => {
                     setValue(newValue);
                 }}
