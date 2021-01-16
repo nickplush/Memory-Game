@@ -8,7 +8,7 @@ const useStyles = makeStyles({
     },
     img: {
         height: 'auto',
-        width: "30%"
+        width: '30%'
     }
 });
 

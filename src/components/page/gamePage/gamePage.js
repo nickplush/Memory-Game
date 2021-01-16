@@ -7,14 +7,24 @@ import Am from './images/am.png'
 import TGH from './images/tdg.png'
 import Gd from './images/gd.png'
 import LP from './images/lp.png'
-
 import PlayingField from "./PlayingField";
 import {Link} from "react-router-dom";
-import {Button} from "@material-ui/core";
+import {Button, makeStyles} from "@material-ui/core";
+
+const useStyles = makeStyles({
+    button: {
+        background: "black",
+        color: "white",
+        '&:hover': {
+            background: "white",
+            color: "black",
+        },
+    }
+});
 
 const GamePage = () => {
     const content = [AskAleks, Nirvana, Kish, TFK, Am, TGH, Gd, LP]
-
+    const classes = useStyles()
     const dblArr = () => {
         return content.concat(content)
     }
@@ -32,6 +42,7 @@ const GamePage = () => {
             <Link to={'/'}>
                 <Button variant={"contained"}
                         color={"primary"}
+                        className={classes.button}
                 >
                     reset game
                 </Button>

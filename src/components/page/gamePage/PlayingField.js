@@ -10,28 +10,27 @@ const PlayingField = ({array}) => {
     const [open, setOpen] = useState(false)
     const [time, setTime] = useState(0)
 
-    useEffect(()=>{
-        if(done.length === array.length/2){
-            setTime(new Date().getTime()- time)
+    useEffect(() => {
+        if (done.length === array.length / 2) {
+            setTime(new Date().getTime() - time)
             setOpen(true)
         }
-    },[done])
-    useEffect(()=>startGame(),[])
-    useEffect(()=> {
+    }, [done])
+    useEffect(() => startGame(), [])
+    useEffect(() => {
         if (state.length === 2) {
             const check = state[0].id !== state[1].id && state[0].value === state[1].value
-            if(check){
+            if (check) {
                 setDone([...done, state[0].value])
+            } else {
+                setError(error + 1)
             }
-            else {
-                setError(error+1)
-            }
-            setTimeout(()=> setState([]), 800)
+            setTimeout(() => setState([]), 800)
         }
     }, [state])
 
     const startGame = () => {
-        setTimeout(()=>{
+        setTimeout(() => {
 
             setDone([])
             const timeNow = new Date().getTime()
@@ -56,7 +55,9 @@ const PlayingField = ({array}) => {
                                               value={state}/>
                 )}
             </Grid>
+            {open &&
             <ModalWindow open={open} errors={error} time={time}/>
+            }
         </div>
     )
 }
