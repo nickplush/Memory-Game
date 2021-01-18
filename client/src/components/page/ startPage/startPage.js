@@ -9,7 +9,7 @@ import {getGameInfo} from "../../../actions/gameInfoActions";
 const useStyles = makeStyles({
     root: {
         width: '100%',
-        minHeight: '100vh',
+        minHeight: '85vh',
         display: "flex",
         flexDirection: "column",
         alignItems: "center",

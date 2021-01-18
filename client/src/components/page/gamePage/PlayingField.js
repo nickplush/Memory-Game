@@ -53,7 +53,7 @@ const PlayingField = ({array}) => {
 
     return (
         <div>
-            <Grid container spacing={10} justify={"flex-start"}>
+            <Grid container spacing={4} justify={"center"}>
                 {array.map((item, i) => <Card key={i}
                                               id={i}
                                               item={item}

@@ -2,12 +2,13 @@ import React, {useEffect, useState} from 'react';
 import {Grid, makeStyles, Paper} from "@material-ui/core";
 
 const useStyles = makeStyles({
-    container: {
-        padding:0
-    },
     img: {
-        height: 'auto',
-        width: '30%'
+        height: '60%',
+        width: 'auto'
+    },
+    container:{
+        margin:"10px",
+        display:"flex"
     }
 });
 
@@ -39,7 +40,7 @@ const Card = ({
     }
 
     return (
-        <Grid item xs={3} className={classes.container} onClick={checkValue}>
+        <Grid item xs={2} className={classes.container} onClick={checkValue}>
             <div className={isFlip ? 'flip-container active' : 'flip-container'}>
                 <div className="flipper">
                     <Paper className="front">
