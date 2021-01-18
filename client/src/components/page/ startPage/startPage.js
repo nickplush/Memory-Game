@@ -48,6 +48,7 @@ const StartPage = () => {
             names.push(value)
         }
         const newGameData = {...gameData, players: names, lastPlayer: value}
+        localStorage.setItem('game',JSON.stringify(newGameData))
         dispatch(getGameInfo(newGameData))
     }
 
