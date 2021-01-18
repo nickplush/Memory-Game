@@ -7,8 +7,9 @@ const useStyles = makeStyles({
         width: 'auto'
     },
     container:{
-        margin:"10px",
-        display:"flex"
+        margin: 0,
+        width:'100%',
+        padding:20
     }
 });
 
@@ -40,7 +41,7 @@ const Card = ({
     }
 
     return (
-        <Grid item xs={2} className={classes.container} onClick={checkValue}>
+        <Grid item xs={3} className={classes.container} onClick={checkValue}>
             <div className={isFlip ? 'flip-container active' : 'flip-container'}>
                 <div className="flipper">
                     <Paper className="front">
