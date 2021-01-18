@@ -1,9 +1,16 @@
 import React, {useEffect, useState} from 'react';
-import {Grid} from "@material-ui/core";
+import {Grid, makeStyles} from "@material-ui/core";
 import Card from "./Card";
 import ModalWindow from "./modalWindow";
 
+const useStyles = makeStyles({
+    check: {
+        background: "red",
+    },
+});
+
 const PlayingField = ({array}) => {
+    const classes = useStyles()
     const [state, setState] = useState([])
     const [done, setDone] = useState([...array])
     const [error, setError] = useState(0)
@@ -29,9 +36,16 @@ const PlayingField = ({array}) => {
         }
     }, [state])
 
+    const restart = () => {
+        setDone([...array])
+        setOpen(false)
+        setError(0)
+        setTime(0)
+        startGame()
+    }
+
     const startGame = () => {
         setTimeout(() => {
-
             setDone([])
             const timeNow = new Date().getTime()
             setTime(timeNow)
@@ -46,7 +60,7 @@ const PlayingField = ({array}) => {
 
     return (
         <div>
-            <Grid container spacing={12}>
+            <Grid container spacing={10} justify={"flex-start"}>
                 {array.map((item, i) => <Card key={i}
                                               id={i}
                                               item={item}

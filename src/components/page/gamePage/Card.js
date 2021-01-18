@@ -3,8 +3,7 @@ import {Grid, makeStyles, Paper} from "@material-ui/core";
 
 const useStyles = makeStyles({
     container: {
-        display: "flex",
-        justifyContent: "center",
+        padding:0
     },
     img: {
         height: 'auto',

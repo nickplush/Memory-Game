@@ -13,7 +13,9 @@ function App() {
     return (
         <BrowserRouter>
             <Route path={'/'} exact component={StartPage}/>
+            { gameData.lastPlayer &&
             <Route path={'/game'} component={GamePage}/>
+            }
             <Route path={'/records'} component={RecordsPage}/>
         </BrowserRouter>
     );

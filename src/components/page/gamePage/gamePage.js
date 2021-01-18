@@ -20,7 +20,7 @@ const useStyles = makeStyles({
             background: "white",
             color: "black",
         },
-    }
+    },
 });
 
 const GamePage = () => {

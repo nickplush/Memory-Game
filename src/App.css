@@ -1,6 +1,9 @@
 .flip-container {
   perspective: 1000px;
-  margin: 10px;
+}
+
+body{
+  margin: 0;
 }
 
 flip-container:active .flipper, .flip-container.active .flipper {
@@ -8,8 +11,8 @@ flip-container:active .flipper, .flip-container.active .flipper {
 }
 
 .flip-container, .front, .back {
-  width: 90%;
-  height: 150px;
+  width: 100%;
+  height: 140px;
 }
 
 .flipper {
@@ -26,8 +29,6 @@ flip-container:active .flipper, .flip-container.active .flipper {
   position: absolute;
   top: 0;
   left: 0;
-  width: 90%;
-  height: 150px;
 }
 .front {
   background-image: url('./components/page/gamePage/images/fon.png');

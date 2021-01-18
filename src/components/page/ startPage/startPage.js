@@ -23,6 +23,9 @@ const useStyles = makeStyles({
             background: "white",
             color: "black",
         },
+    },
+    logo: {
+        maxWidth:'90%'
     }
 });
 
@@ -77,7 +80,7 @@ const StartPage = () => {
     const classes = useStyles()
     return (
         <div className={classes.root}>
-            <img src={logo}/>
+            <img src={logo} className={classes.logo}/>
             <br/>
             <Autocomplete
                 value={lastPlayers}
@@ -91,7 +94,7 @@ const StartPage = () => {
                 freeSolo
                 id="free-solo-demo"
                 options={names.map((option) => option)}
-                style={{width: 300}}
+                style={{width: '300px'}}
                 renderInput={(params) => (
                     <TextField {...params} label="Who are you?" margin="normal" variant="outlined"/>
                 )}

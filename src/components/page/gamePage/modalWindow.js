@@ -9,9 +9,7 @@ import {Link} from "react-router-dom";
 import {useDispatch, useSelector} from "react-redux";
 import {changeRecords} from "../../../actions/gameInfoActions";
 
-// {user:gameInfo.lastPlayer, time: timeIsSek, score:playerScore}
-
-const ModalWindow = ({open, errors, time}) => {
+const ModalWindow = ({open, errors, time, restart}) => {
     const dispatch = useDispatch()
     const gameInfo = useSelector(state => state)
     const timeIsSek = time / 1000
@@ -20,10 +18,8 @@ const ModalWindow = ({open, errors, time}) => {
     const playerScore = score - (scoreCof * (timeIsSek + errors * 5)) < 0 ? 0 : score - (scoreCof * (timeIsSek + errors * 5))
     const results = {...gameInfo.records, [gameInfo.lastPlayer]: {score: Math.round(playerScore), time: timeIsSek}}
 
-    useEffect(() => {dispatch(changeRecords(results))
-    console.log('LOOOG', results)}, [open])
-    useEffect(()=> {localStorage.setItem('game',JSON.stringify(gameInfo))
-        console.log('LOOOG', gameInfo)},[gameInfo])
+    useEffect(() => {dispatch(changeRecords(results))},[])
+    useEffect(()=> {localStorage.setItem('game',JSON.stringify(gameInfo))},[])
 
     return (
         <Dialog
@@ -41,13 +37,18 @@ const ModalWindow = ({open, errors, time}) => {
             </DialogContent>
             <DialogActions>
                 <Link to={'/game'}>
-                    <Button color="primary">
+                    <Button color="primary" onClick={restart}>
                         Restart Game
                     </Button>
                 </Link>
                 <Link to={'/'}>
                     <Button color="primary">
                         Reset Game
+                    </Button>
+                </Link>
+                <Link to={'/records'}>
+                    <Button color="primary">
+                        Results
                     </Button>
                 </Link>
             </DialogActions>
