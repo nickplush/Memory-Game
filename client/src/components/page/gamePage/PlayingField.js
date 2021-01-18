@@ -63,7 +63,7 @@ const PlayingField = ({array}) => {
                 )}
             </Grid>
             {open &&
-            <ModalWindow open={open} errors={error} time={time}/>
+            <ModalWindow open={open} errors={error} time={time} restart={restart}/>
             }
         </div>
     )
