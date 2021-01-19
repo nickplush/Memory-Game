@@ -42,6 +42,7 @@ const PlayingField = ({array}) => {
             setDone([])
             const timeNow = new Date().getTime()
             setTime(timeNow)
+            setState([])
         }, 5000)
     }
 
@@ -53,7 +54,7 @@ const PlayingField = ({array}) => {
 
     return (
         <div>
-            <Grid container spacing={12} justify={"center"}>
+            <Grid container spacing={3} justify={"center"}>
                 {array.map((item, i) => <Card key={i}
                                               id={i}
                                               item={item}
