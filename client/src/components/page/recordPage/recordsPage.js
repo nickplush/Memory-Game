@@ -18,6 +18,7 @@ const useStyles = makeStyles({
         background: "black",
         color: "white",
         margin: 10,
+        marginLeft: 0,
         '&:hover': {
             background: "white",
             color: "black",
