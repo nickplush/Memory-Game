@@ -18,8 +18,9 @@ const ModalWindow = ({open, errors, time, restart}) => {
     const playerScore = score - (scoreCof * (timeIsSek + errors * 5)) < 0 ? 0 : score - (scoreCof * (timeIsSek + errors * 5))
     const results = {...gameInfo.records, [gameInfo.lastPlayer]: {score: Math.round(playerScore), time: timeIsSek}}
 
+
     useEffect(() => {dispatch(changeRecords(results))},[])
-    useEffect(()=> localStorage.setItem('game',JSON.stringify(gameInfo)),[])
+    useEffect(()=> localStorage.setItem('game',JSON.stringify({...gameInfo,records: results})),[])
 
     return (
         <Dialog
